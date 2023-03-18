@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:nylo_framework/nylo_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'controller.dart';
 
@@ -18,5 +19,8 @@ class HomeController extends Controller {
 
   onTapChangeLog() async {
     await launchUrl(Uri.parse("https://github.com/nylo-core/framework/blob/4.x/CHANGELOG.md"));
+  }
+  onTapTravelApp() {
+    routeTo("/travel-welcome");
   }
 }

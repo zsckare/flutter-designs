@@ -23,7 +23,6 @@ class _HomePageState extends NyState<HomePage> {
   @override
   init() async {
     super.init();
-
   }
 
   @override
@@ -43,15 +42,12 @@ class _HomePageState extends NyState<HomePage> {
               Text(
                 getEnv("APP_NAME"),
               ).displayMedium(context),
-              Text(
-                "Micro-framework for Flutter",
-                textAlign: TextAlign.center
-              ).titleMedium(context)
+              Text("Micro-framework for Flutter", textAlign: TextAlign.center)
+                  .titleMedium(context)
                   .setColor(context, (color) => color.primaryAccent),
               Text(
                 "Build something amazing 💡️",
-              ).medium(context)
-                  .alignCenter(),
+              ).medium(context).alignCenter(),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -73,54 +69,24 @@ class _HomePageState extends NyState<HomePage> {
                             offset: Offset(0, 3), // changes position of shadow
                           ),
                         ]),
-                    child: ListView(
-                      shrinkWrap: true,
+                    child: Column(
                       children: [
-                        MaterialButton(
-                          child: Text(
-                            "documentation".tr().capitalize(),
-                          ).large(context)
-                              .setColor(context, (color) => color.surfaceContent),
-                          onPressed: widget.controller.onTapDocumentation,
-                        ),
-                        Divider(
-                          height: 0,
-                        ),
-                        MaterialButton(
-                          child: Text(
-                            "GitHub",
-                          ).large(context)
-                              .setColor(
-                              context, (color) => color.surfaceContent),
-                          onPressed: widget.controller.onTapGithub,
-                        ),
-                        Divider(
-                          height: 0,
-                        ),
-                        MaterialButton(
-                          child: Text(
-                            "changelog".tr().capitalize(),
-                          ).large(context)
-                              .setColor(
-                              context, (color) => color.surfaceContent),
-                          onPressed: widget.controller.onTapChangeLog,
+                        InkWell(
+                           
+                          onTap: () {
+                            widget.controller.onTapTravelApp();
+                          },
+                          child: Row(
+                            children: [
+                              Icon(Icons.flight),
+                              SizedBox(width: 8),
+                              Text("Travel App").medium(context), 
+                            ],
+                          ),
                         ),
                       ],
-                    ),
+                    )
                   ),
-                  Text(
-                    "Framework Version: $nyloVersion",
-                  ).medium(context)
-                      .setColor(context, (color) => Colors.grey),
-                  Switch(
-                      value: _darkMode,
-                      onChanged: (value) {
-                        _darkMode = value;
-                        NyTheme.set(context,
-                            id: getEnv(_darkMode == true ? 'DARK_THEME_ID' : 'LIGHT_THEME_ID'));
-                        setState(() {});
-                      }),
-                  Text("${_darkMode == true ? "Dark" : "Light"} Mode"),
                 ],
               ),
             ],

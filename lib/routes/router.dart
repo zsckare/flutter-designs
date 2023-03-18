@@ -1,3 +1,6 @@
+import '../resources/pages/travel_app/travel_home_page.dart';
+ 
+import '../resources/pages/travel_app/travel_welcome_page.dart';
 import '/resources/pages/home_page.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
@@ -19,4 +22,8 @@ appRouter() => nyRoutes((router) {
   // Add your routes here
 
   // router.route("/new-page", (context) => NewPage(), transition: PageTransitionType.fade);
+
+   router.route("/travel-welcome", (context) => TravelWelcomePage());
+
+  router.route("/travel-home", (context) => TravelHomePage());
 });
