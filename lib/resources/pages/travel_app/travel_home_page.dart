@@ -216,71 +216,76 @@ class _TravelHomePageState extends NyState<TravelHomePage> {
               margin: EdgeInsets.only(top: 20),
               height: 450,
               child: ListView(scrollDirection: Axis.vertical, children: [
-                Container(
-                  margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 250,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: ClipRRect(
-                          child: Image.asset(
-                            "public/assets/images/place.png",
-                            fit: BoxFit.cover,
+                InkWell(
+                  onTap:(){
+                    routeTo("/travel-detail");
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 250,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                          borderRadius: BorderRadius.circular(20),
+                          child: ClipRRect(
+                            child: Image.asset(
+                              "public/assets/images/place.png",
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Barcelona, Spain",
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Barcelona, Spain",
+                                  style: TextStyle(
+                                      fontSize: 20, fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "42 hotels",
+                                  style:
+                                      TextStyle(fontSize: 12, color: Colors.grey),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.star),
+                                Text("4.5"),
+                              ],
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "3-8 Jun, 1200km",
+                              style: TextStyle(fontSize: 12, color: Colors.grey),
+                            ),
+                            Text("\$ 320 nigth",
                                 style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "42 hotels",
-                                style:
-                                    TextStyle(fontSize: 12, color: Colors.grey),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Icon(Icons.star),
-                              Text("4.5"),
-                            ],
-                          )
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "3-8 Jun, 1200km",
-                            style: TextStyle(fontSize: 12, color: Colors.grey),
-                          ),
-                          Text("\$ 320 nigth",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                    ],
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold)),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Container(

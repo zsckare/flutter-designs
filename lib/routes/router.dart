@@ -1,3 +1,4 @@
+import '../resources/pages/travel_app/travel_detail_page.dart';
 import '../resources/pages/travel_app/travel_home_page.dart';
  
 import '../resources/pages/travel_app/travel_welcome_page.dart';
@@ -26,4 +27,6 @@ appRouter() => nyRoutes((router) {
    router.route("/travel-welcome", (context) => TravelWelcomePage());
 
   router.route("/travel-home", (context) => TravelHomePage());
+
+  router.route("/travel-detail", (context) => TravelDetailPage());
 });
