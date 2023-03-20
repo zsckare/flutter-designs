@@ -84,6 +84,19 @@ class _HomePageState extends NyState<HomePage> {
                             ],
                           ),
                         ),
+                         InkWell(
+                           
+                          onTap: () {
+                            widget.controller.onFoodApp();
+                          },
+                          child: Row(
+                            children: [
+                              Icon(Icons.flight),
+                              SizedBox(width: 8),
+                              Text("Food App").medium(context), 
+                            ],
+                          ),
+                        ),
                       ],
                     )
                   ),

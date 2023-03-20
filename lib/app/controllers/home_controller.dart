@@ -23,4 +23,7 @@ class HomeController extends Controller {
   onTapTravelApp() {
     routeTo("/travel-welcome");
   }
+  onFoodApp() {
+    routeTo("/food-home");
+  }
 }
